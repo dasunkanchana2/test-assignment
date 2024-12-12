@@ -1,11 +1,11 @@
-package com.dasun.tech.assignment.bubblesort;
+package com.dasun.tech.assignment.sort;
 
 import java.util.Arrays;
 
 /**
  * Bubble sort utility
  */
-public class BubbleSortUtility {
+public class BubbleSortUtil {
 
     /**
      * Bubble sort
@@ -17,7 +17,7 @@ public class BubbleSortUtility {
         int temp =0;
         for(int i=0;i<length;i++){
             for(int j=1;j<length-i;j++){
-                if(arr[j]< arr[j-1]){
+                if(arr[j]> arr[j-1]){
                     temp = arr[j];
                     arr[j] = arr[j-1];
                     arr[j-1] = temp;
@@ -28,7 +28,7 @@ public class BubbleSortUtility {
     }
     public static void main(String[] args) {
         int arr[] ={5,1,4,2,6,3};
-        BubbleSortUtility bubSortObj = new BubbleSortUtility();
+        BubbleSortUtil bubSortObj = new BubbleSortUtil();
         bubSortObj.buildBubSort(arr);
     }
 }
