@@ -77,6 +77,22 @@ public class RemoveDupAndSortUtil {
         }
     }
 
+    private void buildBubSort(){
+        int arr[] ={5,1,4,2,6,3};
+        int length = arr.length;
+        int temp =0;
+        for(int i=0;i<length;i++){
+            for(int j=1;j<length-i;j++){
+                if(arr[j]> arr[j-1]){
+                    temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                }
+            }
+        }
+        Arrays.stream(arr).forEach(e -> System.out.print(e));
+    }
+
     public static void main(String[] args) {
         RemoveDupAndSortUtil remDupObj = new RemoveDupAndSortUtil();
         remDupObj.removeDupAndSort();
@@ -88,5 +104,6 @@ public class RemoveDupAndSortUtil {
         remDupObj.findNumBasedOnDec();
         remDupObj.findAnagram("Silent","Listen");
         remDupObj.doMergeSort();
+        remDupObj.buildBubSort();
     }
 }
